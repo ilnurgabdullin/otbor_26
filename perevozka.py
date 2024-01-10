@@ -1,4 +1,4 @@
-def max_profit(N, S, cargo):
+def max_profit(S, cargo):
     # тут мы сортируем данные чтобы сначала шли более тяжелые
     sorted_cargo = sorted(cargo, key=lambda x: x[1], reverse = True)
     # тут мы уже сортируем грузы так чтобы сначала шли грузы с большей удельной
@@ -33,7 +33,7 @@ if __name__ == '__main__':
         N, S = map(int, file.readline().split())
         cargo = [tuple(map(int, line.split())) for line in file]
 
-    result, max_vol = max_profit(N, S, cargo)
+    result, max_vol = max_profit(S, cargo)
     print(int(result * 0.2), max_vol)
 
 
